@@ -1,6 +1,5 @@
 let homepage = require('../pages/HomePage');
 let clientpage = require('../pages/ClientLogin');
-const ClientLogin = require('../pages/ClientLogin');
 
 describe('Verify Genius Merchant Portal Login', function () {
     it('verifying the functionality of login', function () {
