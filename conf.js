@@ -17,7 +17,7 @@ exports.config = {
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
 	//specs: ['../tests/geniusMerchantPortal_Login.js'],
 	specs: [
-		"tests/*.js",
+		"test-suites/*.js",
 	],
 
 	// Options to be passed to Jasmine-node.
