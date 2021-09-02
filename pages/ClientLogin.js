@@ -1,16 +1,18 @@
 let ClientPage = function(){
 
-    let merchantLink = element(by.id('t8t9jt-accordion-label'));
-    let acquiringLink = element(by.id('uyubvn-accordion-label'));
-    let issuingLink = element(by.id('2d4xeh-accordion-label'));
+    let merchantLink = element(by.linkText('Merchant'));
+    //let acquiringLink = element(by.linkText('uyubvn-accordion-label'));
+    //let issuingLink = element(by.linkText('2d4xeh-accordion-label'));
     let geniusMerchantPortalLink = element(by.linkText('Genius Merchant Portal'));
 
     this.clickMerchantLink = function(){
-        merchantLink.click();
+        browser.actions().mouseMove(merchantLink).click().perform();
     };
 
     this.clickGeniusMerchantPortalLink = function(){
-        geniusMerchantPortalLink.click();
+        browser.executeScript("arguments[0].scrollIntoView();", geniusMerchantPortalLink);
+        browser.actions().mouseMove(geniusMerchantPortalLink).click().perform();
+        browser.sleep(10000);
     };
 
 };
