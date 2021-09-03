@@ -17,7 +17,7 @@ exports.config = {
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
 	//specs: ['../tests/geniusMerchantPortal_Login.js'],
 	specs: [
-		"test-suites/*.js",
+		"test-suites/**/*.spec.js",
 	],
 
 	// Options to be passed to Jasmine-node.
@@ -43,5 +43,12 @@ exports.config = {
 			docName: 'TestResult.html', // Change html report file name
 			gatherBrowserLogs: true // Store Browser logs
 		}).getJasmine2Reporter());
+
+		global.requirePageObjects = function (relativePath) {
+			return require(__dirname + '/pages/' + relativePath + '.js');
+		};
+		global.requireWrappers = function (relativePath) {
+			return require(__dirname + '/wrappers/' + relativePath + '.js');
+		};
 	}
 };
