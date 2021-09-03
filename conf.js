@@ -12,7 +12,7 @@ exports.config = {
 		}
 	},
 
-	framework: 'jasmine2',
+	framework: 'jasmine',
 
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
 	//specs: ['../tests/geniusMerchantPortal_Login.js'],
@@ -30,6 +30,7 @@ exports.config = {
 	onPrepare: () => {
 		browser.manage().window().maximize();
 		browser.manage().timeouts().implicitlyWait(5000);
+		browser.waitForAngularEnabled(false);
 
 		// Add a screenshot reporter and store screenshots to `./test-results`:
 		jasmine.getEnv().addReporter(new HtmlReporter({
@@ -44,7 +45,7 @@ exports.config = {
 			gatherBrowserLogs: true // Store Browser logs
 		}).getJasmine2Reporter());
 
-		global.requirePageObjects = function (relativePath) {
+		global.requirePO = function (relativePath) {
 			return require(__dirname + '/pages/' + relativePath + '.js');
 		};
 		global.requireWrappers = function (relativePath) {
