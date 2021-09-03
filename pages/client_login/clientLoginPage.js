@@ -1,3 +1,4 @@
+let wrapperMethods = requireWrappers ('wrapperMethods');
 let ClientPage = function(){
 
     let merchantLink = element(by.linkText('Merchant'));
@@ -10,7 +11,7 @@ let ClientPage = function(){
     };
 
     this.clickGeniusMerchantPortalLink = function(){
-        browser.executeScript("arguments[0].scrollIntoView();", geniusMerchantPortalLink);
+        wrapperMethods.javascriptScrollIntoView(geniusMerchantPortalLink);
         browser.actions().mouseMove(geniusMerchantPortalLink).click().perform();
         browser.sleep(10000);
     };

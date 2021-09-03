@@ -45,10 +45,10 @@ exports.config = {
 		}).getJasmine2Reporter());
 
 		global.requirePageObjects = function (relativePath) {
-			return require(__dirname + '/pages/**/' + relativePath + '.js');
-		};
-		global.requireHomePage = function (relativePath) {
 			return require(__dirname + '/pages/' + relativePath + '.js');
+		};
+		global.requireWrappers = function (relativePath) {
+			return require(__dirname + '/wrappers/' + relativePath + '.js');
 		};
 	}
 };

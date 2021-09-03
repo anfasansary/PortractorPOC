@@ -1,5 +1,5 @@
-let homepage = require('../pages/HomePage');
-let clientpage = require('../pages/ClientLogin');
+let homepage = requirePageObjects('HomePage');
+let clientpage = requirePageObjects('client_login/ClientLoginPage');
 
 describe('Verify Genius Merchant Portal Login', function () {
     it('verifying the functionality of login', function () {
@@ -9,6 +9,6 @@ describe('Verify Genius Merchant Portal Login', function () {
         clientpage.clickMerchantLink();
         clientpage.clickGeniusMerchantPortalLink();
 
-        browser.sleep(3000);
+        browser.sleep(5000);
     });
 });
