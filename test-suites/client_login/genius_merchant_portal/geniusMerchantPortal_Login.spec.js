@@ -1,7 +1,7 @@
 let homepage = requirePO('HomePage');
 let clientpage = requirePO('client_login/ClientLoginPage');
 let businesspage = requirePO('client_login/genius_merchant_portal/geniusMerchantPortalPage');
-
+let wrapperMethods = requireWrappers ('wrapperMethods');
 describe('Verify Genius Merchant Portal Login', function () {
     it('verifying the functionality of login', function () {
 
@@ -17,5 +17,6 @@ describe('Verify Genius Merchant Portal Login', function () {
         businesspage.buttonLogin();
 
         expect(businesspage.errorClass()).toBe(true);
+        wrapperMethods.browserCleanUp();
     });
 });
