@@ -1,5 +1,5 @@
 let wrapperMethods = requireWrappers ('wrapperMethods');
-let ClientPage = function(){
+let clientLoginPage = function(){
 
     let merchantLink = element(by.linkText('Merchant'));
     let geniusMerchantPortalLink = element(by.linkText('Genius Merchant Portal'));
@@ -17,4 +17,4 @@ let ClientPage = function(){
 
 };
 
-module.exports = new ClientPage();
+module.exports = new clientLoginPage();
