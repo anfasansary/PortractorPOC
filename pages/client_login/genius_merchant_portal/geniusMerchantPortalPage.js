@@ -1,6 +1,6 @@
 const { element, browser } = require("protractor");
 
-let merchantPortal = function(){
+let geniusMerchantPortalPage = function(){
 
     let businessLogin = element(by.id('login'));
     let username=element(by.xpath("(//input[@name='username'])[2]"));
@@ -29,4 +29,4 @@ let merchantPortal = function(){
 
 }
 
-module.exports = new merchantPortal();
+module.exports = new geniusMerchantPortalPage();

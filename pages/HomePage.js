@@ -1,4 +1,4 @@
-let HomePage = function(){
+let homePage = function(){
 
     let clientLoginButton = element(by.linkText('Login'));
 
@@ -12,4 +12,4 @@ let HomePage = function(){
 
 };
 
-module.exports = new HomePage();
+module.exports = new homePage();

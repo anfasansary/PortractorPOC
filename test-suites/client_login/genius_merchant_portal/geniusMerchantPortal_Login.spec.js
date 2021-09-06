@@ -1,9 +1,9 @@
-let homepage = requirePO('HomePage');
-let clientpage = requirePO('client_login/ClientLoginPage');
+let homepage = requirePO('homePage');
+let clientpage = requirePO('client_login/clientLoginPage');
 let businesspage = requirePO('client_login/genius_merchant_portal/geniusMerchantPortalPage');
 let wrapperMethods = requireWrappers ('wrapperMethods');
 describe('Verify Genius Merchant Portal Login', function () {
-    it('verifying the functionality of login', function () {
+    it('Verifying the functionality of login', function () {
 
         homepage.getApplication();
         homepage.clickClientLogin();
