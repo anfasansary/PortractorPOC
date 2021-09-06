@@ -51,5 +51,8 @@ exports.config = {
 		global.requireWrappers = function (relativePath) {
 			return require(__dirname + '/wrappers/' + relativePath + '.js');
 		};
+		global.requireUtility = function (relativePath) {
+			return require(__dirname + '/utilities/' + relativePath + '.js');
+		};
 	}
 };
