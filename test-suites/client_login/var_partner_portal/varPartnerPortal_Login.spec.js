@@ -6,7 +6,7 @@ let wrapperMethods = requireWrappers ('wrapperMethods');
 describe('Verify VAR Partner Portal Login', function () {
     it('verifying the functionality of login in VAR Partner Portal', function () {
 
-        homepage.getApplication();
+        getApplication();
         homepage.clickClientLogin();
         clientpage.clickacquiringLink();
         clientpage.clickvarPartnerPortalLink();

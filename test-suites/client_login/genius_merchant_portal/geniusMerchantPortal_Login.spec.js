@@ -5,7 +5,7 @@ let wrapperMethods = requireWrappers ('wrapperMethods');
 describe('Verify Genius Merchant Portal Login', function () {
     it('Verifying the functionality of login', function () {
 
-        homepage.getApplication();
+        getApplication();
         homepage.clickClientLogin();
         clientpage.clickMerchantLink();
         clientpage.clickGeniusMerchantPortalLink();
