@@ -38,9 +38,13 @@ exports.config = {
 		browser.manage().timeouts().implicitlyWait(5000);
 		browser.waitForAngularEnabled(false);
 
+		var today = new Date();
+		var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
+		var datetime = date+ '_' + today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
+
 		// Add a screenshot reporter and store screenshots to `./test-results`:
 		jasmine.getEnv().addReporter(new HtmlReporter({
-			baseDirectory: 'test-results',
+			baseDirectory: 'test-results/beautiful_report/Report_' + datetime,
 			preserveDirectory: false, // Preserve base directory
 			screenshotsSubfolder: 'screenshots',
 			jsonsSubfolder: 'jsons', // JSONs Subfolder
@@ -52,11 +56,17 @@ exports.config = {
 		}).getJasmine2Reporter());
 
 		jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-			savePath:'./reports'
-		})
+			savePath: './test-results/jasmine_report/Report_' + datetime,
+			screenshotsFolder: 'screenshots',
+			takeScreenshots: true,
+			takeScreenshotsOnlyOnFailures: false,
+			fixedScreenshotName: true,
+			fileName: 'HtmlReport',
+			fileNameDateSuffix: true,
+			fileNameSeparator: '_',
+			cleanDestination: false
+		}));
 
-		);
-	
 
 		global.getApplication = function () {
 			browser.get('https://www.tsys.com/');
