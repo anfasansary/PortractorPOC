@@ -15,10 +15,16 @@ exports.config = {
 	framework: 'jasmine',
 
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
-	//specs: ['../tests/geniusMerchantPortal_Login.js'],
-	specs: [
-		"test-suites/**/*.spec.js",
-	],
+
+	// specs: [
+	// 	"test-suites/**/*.spec.js",
+	// ],
+
+	suites: {
+		regression: ["test-suites/**/*.spec.js"]
+		//smoke: ["test-suites/**/*.spec.js"]
+		//geniusMerchant: ["test-suites/**/genius_merchant_portal/*.spec.js"]
+	},
 
 	// Options to be passed to Jasmine-node.
 	jasmineNodeOpts: {
@@ -45,6 +51,10 @@ exports.config = {
 			gatherBrowserLogs: true // Store Browser logs
 		}).getJasmine2Reporter());
 
+		global.getApplication = function () {
+			browser.get('https://www.tsys.com/');
+		};
+
 		global.requirePO = function (relativePath) {
 			return require(__dirname + '/pages/' + relativePath + '.js');
 		};
@@ -54,5 +64,12 @@ exports.config = {
 		global.requireUtility = function (relativePath) {
 			return require(__dirname + '/utilities/' + relativePath + '.js');
 		};
-	}
+		global.requireTestData = function (relativePath) {
+			return require(__dirname + '/test-data/' + relativePath);
+		};
+	},
+
+	// onComplete: function(){
+
+	// }
 };
