@@ -1,6 +1,6 @@
 // Require protractor-beautiful-reporter to generate reports.
 var HtmlReporter = require('protractor-beautiful-reporter');
-
+var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 exports.config = {
 	directConnect: true,
 
@@ -50,6 +50,13 @@ exports.config = {
 			docName: 'TestResult.html', // Change html report file name
 			gatherBrowserLogs: true // Store Browser logs
 		}).getJasmine2Reporter());
+
+		jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
+			savePath:'./reports'
+		})
+
+		);
+	
 
 		global.getApplication = function () {
 			browser.get('https://www.tsys.com/');
