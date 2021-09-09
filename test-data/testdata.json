@@ -1,0 +1,13 @@
+{
+    "GeniusMerchantLogin": {
+        "loginErrorMessage": "Invaid User Details",
+        "Username": "username",
+        "Password": "password"
+    },
+
+    "VarPartnerPortal": {
+        "loginErrorMessage": "Invaid User Details",
+        "Username": "username",
+        "Password": "password"
+    }
+}

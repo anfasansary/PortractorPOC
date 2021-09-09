@@ -64,5 +64,12 @@ exports.config = {
 		global.requireUtility = function (relativePath) {
 			return require(__dirname + '/utilities/' + relativePath + '.js');
 		};
-	}
+		global.requireTestData = function (relativePath) {
+			return require(__dirname + '/test-data/' + relativePath);
+		};
+	},
+
+	// onComplete: function(){
+
+	// }
 };
