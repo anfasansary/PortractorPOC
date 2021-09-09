@@ -15,7 +15,6 @@ describe('Verify Genius Merchant Portal Login', function () {
         businesspage.clickLogin();
         businesspage.sendUsername(testData.GeniusMerchantLogin.Username);
         businesspage.sendPassword(testData.GeniusMerchantLogin.Password);
-        browser.sleep(3000);
         businesspage.buttonLogin();
 
         expect(businesspage.errorClass()).toBe(true);

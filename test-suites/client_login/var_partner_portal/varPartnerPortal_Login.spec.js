@@ -16,7 +16,6 @@ describe('Verify VAR Partner Portal Login', function () {
         partnerLogin.sendPassword('test');
         partnerLogin.buttonLogin();
         expect(partnerLogin.errorClass()).toBe(true);
-        browser.sleep(3000);
         wrapperMethods.browserCleanUp();
     });
     
